@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript - MA03 - Question 1</title>
+</head>
 <body>
 
 <!--Contact Form-->
+<!-- 
+    Create a contact form. 
+    It should have an input for: 
+        name, 
+        last name, 
+        telephone number, 
+        email address 
+        and submit button. 
 
+    Validate that 'name' and 'last name' inputs are not empty and use regex expressions to validate the telephone and email addresses respectively. Call a function when the submit button is clicked to test these.
+    -->
+    
+    <form>
+        <section>
+            <input id = "Name" type = text placeholder = First_Name pattern="[a-zA-Z\u00c0-\u017e]">             <!-- https://port135.com/2017/01/31/how-to-allow-european-characters-in-text-fields-by-using-regular-expression/ -->
+        </section>
+        <section>
+            <input id = "LastName" type = text placeholder = Last_Name pattern="[a-zA-Z\u00c0-\u017e]">
+        </section>
+        <section>
+            <input id = "Phone" type = text placeholder = 47605059 pattern="\d{8,12}">
+        </section>
+        <section>
+            <input id = "Email" type = text placeholder = your@email.com pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+        </section>
+        <section>
+            <button id = "btn" type = submit>SEND</button>
+        </section>
+    </form>
 
 <script src="script.js"></script>
 </body>
