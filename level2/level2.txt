@@ -3,19 +3,112 @@ JavaScript MA03
 Level 2
 
 1. In your own words, describe what JavaScript Code Style is.
+	JavaScript Code Style(JCS) is what it sounds like. JCS is they way you choose to write your code. 
+	There is however some JavaScript Coding Conventions that is strongly recommended to use.
+	The most important thing about your JCS should be that it is easy to read, for you and others.
+	
+	There is one rule to be extra aware of when writing your code. 
+	Javascript have a feature called "semicolon insertion"; This feature inserts semicolons after a statement when Javascript thinks you forgot to do it. 
+	when using the "return" statement with an object, the placement of your curly braces is not a choice, it is a rule.
+	If your curly braces get placed like this:
+	
+	return
+	{
+	  something
+	};
+
+	Javascript will insert a semicolon right after "return" and right after something.
+	
+	return; 	// JS incorrectly adds this semicolon.
+	{
+    	  something; 	// JS adds a semicolon here as well, because it doesn't realize that this is an object.
+	};
+ 
+	Because we immediately return, it don't know what "something" is. resulting in undefined.
+
+	So in conclusion: The JCS is your own style of coding. BUT you must follow the JavaScript Coding Conventions.
+	Coding conventions and practices may differ depending on where you work. 
+
+	
 
 2. What is a Regular Expression?
+	Regular Expressions (RegExp) are patterns used to match combinations in strings. 
+	In javascript regular expressions are also objects.
+	Regular Expressions are used with the .test and .exec methods of RegExp.
+	or the match, replace, search, and split methods of String.
+
+	Regular expressions are great for checking if inputs in html forms are valid.
+	It can also be used automatically change strings. 
+	Example: 
 
 3. What does the .random() method do?
+	The random method returns a random value depending on how you use it can return a random number, character string ect.
 
 4. What does the .sort() method do?
+	The sort method is used to sort the items in an array. It can sort alphanumeric and numeric values. 
+	It can be used to sort these values either ascending or descending. 
+	the sort method sorts alphanumeric and ascending by default. 
+	this means that the method works great for sorting words or characters in an alphabetic order; without any need for additional "settings".
+	
+	When sorting numeric values "25" is greater than "100" because "2" is greater than "1". 
+	This is clearly wrong, thankfully we can fix it by providing a "compare function" as a parameter.
+	
 
 5. What does the .reverse() method do?
+	The .reverse() method reverses the order of all elements in a string.
 
 6. List two examples of bad JavaScript code.
+	Wrong use of the equality signs( =, == and === ) will result in errors and unexpected results from your code.
+
+	example:
+	var string = "4";
+	var number = 4;
+
+	string == number
+	//
+true
+
+	string === number
+	//
+false
+	
+string = number
+
+	//4
+	number = string
+	//"4"
+	
+
+	Not declaring a variable with the "var" statement will make all variables global variables. 
+	This will result in errors and unexpected results from your code.
+	By not declaring variables using the "var" statement; Local variables in functions can potentially override global variables outside of the functions.
+	Another issue with variables in javascript is that it require global variables. 
+	If one or more variables from different script sources coincidentally share the same
+	name, unexpected results or fatal errors will occur from your code.
 
 7. What data types can a JSON object contain?
+	JSON objects can contain: string, number, object, array, boolean or null. 
+	
 
 8. What is minifying JavaScript Code?
+	Minifying JavaScript Code is the process of removing all unnecessary characters from the code, without changing the outcome of the code. 
+	Unnecessary characters that usually get removed is: 
+		White spaces
+		New line characters
+		comments
+
+	Minifying code can also include rewriting a block of code to be more efficient. There is often a shorter and better way to get the result you want
+	Minifying code is very useful for interpreted languages such as JavaScript. 
+	JavaScript is often deployed and transmitted on the internet; And by minifying the code the amount of data that is transferred is reduced. 
+	And the whole process goes faster. 
+	
+	Minified code should always have a non minified version. 
+	When (not if) modifications, bug-fixing ect. needs to be done; Minified code is terrible to read.
+	Having a non-minified copy will make the task easier and faster.
 
 9. What is a global variable?
+	Variables declared outside of a function becomes a global variable. 
+	A global variable has global scope, It can be accessed by any function or script.
+	By not using the "var" statement when declaring variable inside functions, they to become global.
+
+

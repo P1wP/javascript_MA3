@@ -22,13 +22,17 @@
     
     <form>
         <section>
-            <input id = "Name" type = text placeholder = First_Name pattern="[a-zA-Z\u00c0-\u017e]">             <!-- https://port135.com/2017/01/31/how-to-allow-european-characters-in-text-fields-by-using-regular-expression/ -->
+            <input id = "Name" type = text placeholder = First_Name pattern="[a-z A-Z\u00c0-\u017e]">             
+            <!-- 
+            u00c0-\u017e to allow special characters like Æ, Ø and Å.
+            https://port135.com/2017/01/31/how-to-allow-european-characters-in-text-fields-by-using-regular-expression/
+            -->
         </section>
         <section>
             <input id = "LastName" type = text placeholder = Last_Name pattern="[a-zA-Z\u00c0-\u017e]">
         </section>
         <section>
-            <input id = "Phone" type = text placeholder = 47605059 pattern="\d{8,12}">
+            <input id = "Phone" type = text placeholder = 47605059 pattern="^\d{8,12}$">
         </section>
         <section>
             <input id = "Email" type = text placeholder = your@email.com pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
@@ -37,7 +41,7 @@
             <button id = "btn" type = submit>SEND</button>
         </section>
     </form>
-
+    <!-- RegExp src noroff video. -->
 <script src="script.js"></script>
 </body>
 </html>

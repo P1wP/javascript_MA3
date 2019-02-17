@@ -19,20 +19,23 @@ var jsonObject = {
 //LOG ELEMENTS
 var output = "";
 var output2 = "";
-for (var i = 0; i < jsonObject.video.length && i < jsonObject.video[0].author.data.length; i++){
+var i = 0;
+
+for (i; i < jsonObject.video.length && i < jsonObject.video[0].author.data.length; i++) {
+    
     for (key in jsonObject.video[i]){                      
-            if (jsonObject.video[i].hasOwnProperty(key)) {
-                output += [key] +  ": " + jsonObject.video[i][key] + "\n"
-        }
+            jsonObject.video[i].hasOwnProperty(key);
+            output += [key] +  ": " + jsonObject.video[i][key] + "\n";                              // Get key and value of video object
     }
+    
     for (key in jsonObject.video[0].author.data[i]){                      
-            if (jsonObject.video[0].author.data[i].hasOwnProperty(key)) {
-                output2 += [key] +  ": " + jsonObject.video[0].author.data[i][key] + "\n"
-        }
+            jsonObject.video[0].author.data[i].hasOwnProperty(key);
+            output2 += [key] +  ": " + jsonObject.video[0].author.data[i][key] + "\n";              // Get key and value of author data object. 
     }
 }
+
         
  
-console.log(output + output2);   
+console.log(output + output2);                                                                      // Log to console
 
 
